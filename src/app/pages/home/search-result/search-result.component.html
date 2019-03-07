@@ -1,0 +1,21 @@
+<section class="search-top">
+  <form class="search-form row body-padding" [formGroup]="searchForm">
+    <img (click)="navigate('/')" alt="VouchMe" class="logo" src="/assets/images/site/logo.png" />
+    <mat-form-field class="search-bar">
+      <input type="text" placeholder="Search" aria-label="Number" matInput formControlName="search" [matAutocomplete]="auto">
+      <mat-icon matSuffix>search</mat-icon>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option (click)="navigate(option)" *ngFor="let option of filteredOptions | async" [value]="option">
+          <mat-icon style="color: #c1c1c1">search</mat-icon> {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <span class="mat-caption number-result">
+    125 Search results
+  </span>
+</section>
+
+<div class="clearfix">
+  <app-users-list></app-users-list>
+</div>

@@ -1,0 +1,42 @@
+<section class="col">
+  <div class="body-padding avatar-container">
+    <img class="avatar" src="/assets/images/site/default-user.png" alt="Avatar">
+    <div class="user-detail">
+      <span class="mat-body-1">Alex Amistad</span>
+      <span class="mat-body-2 username-label">evilscripts</span>
+    </div>
+  </div>
+  <div class="vouch-details">
+    <div class="col click-col" (click)="vote('vouch')">
+      <span class="mat-subheading-1">Vouches</span>
+      <span class="mat-subheading-2">871</span>
+    </div>
+    <div class="col click-col" (click)="vote('infame')">
+      <span class="mat-subheading-1">Infames</span>
+      <span class="mat-subheading-2">76</span>
+    </div>
+    <div class="col click-col" (click)="vote('transaction')">
+      <span class="mat-subheading-1">Transactions</span>
+      <span class="mat-subheading-2">1,452</span>
+    </div>
+  </div>
+  <!-- <div class="social-details row">
+    <div class="col">
+      <div class="row">Facebook</div>
+      <div class="row">Twitter</div>
+    </div> 
+    <div class="col">
+      <div class="row">Amazon</div>
+      <div class="row">OLX</div>
+    </div> 
+  </div> -->
+
+  <canvas id="myChart" width="400" height="120"></canvas>
+
+
+  <div class="vouch-controls">
+    <button mat-raised-button (click)="vouch()" class="vouch-btn" color="primary">Vouch</button>
+    <button mat-raised-button (click)="infame()" class="infame-btn" color="accent">Infame</button>
+  </div>
+
+</section>

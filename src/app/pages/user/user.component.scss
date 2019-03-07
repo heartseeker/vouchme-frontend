@@ -1,0 +1,71 @@
+app-user {
+    .avatar {
+        border-radius: 50%;
+        height: 12rem;
+        width: 12rem;
+        border: 2px solid #fff;
+        -webkit-box-shadow: 6px 4px 12px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 4px 12px -5px rgba(0,0,0,0.75);
+        box-shadow: 6px 4px 12px -5px rgba(0,0,0,0.75);
+    }
+
+    .avatar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-detail {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .vouch-details {
+        display: flex;
+        background: #D32F2F;
+        color: #fff;
+        height: 5rem;
+    }
+
+    .mat-subheading-1 {
+        margin: 0;
+        color: #ff9696;
+    }
+
+    .username-label {
+        color: #c1c1c1;
+        line-height: 1rem;
+    }
+
+    .col {
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .vouch-controls {
+        overflow: hidden;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+
+        .vouch-btn {
+            flex: 1;
+            border-radius: 0;
+        }
+
+        .infame-btn {
+            flex: 1;
+            border-radius: 0;
+        }
+
+    }
+
+    .click-col {
+        cursor: pointer;
+    }
+}

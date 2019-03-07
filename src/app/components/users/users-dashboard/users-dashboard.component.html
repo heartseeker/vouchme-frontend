@@ -1,0 +1,59 @@
+<section>
+  <header class="side-padding">
+    <h1 class="mat-title">Profile</h1>
+  </header>
+
+  <div class="side-padding profile-link">
+    <form class="form" [formGroup]="profileLink">
+      <mat-form-field class="form-field">
+        <input matInput formControlName="link" value="http://vouch.me/myspeciallink" readonly>
+      </mat-form-field>
+      <button mat-raised-button matSuffix mat-icon-button>Copy</button>
+    </form>
+  </div>
+
+  <header class="side-padding bottom-padding">
+    <h1 class="mat-title">Transactions</h1>
+  </header>
+
+  <div class="profile-transactions">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let transaction of [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9]">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            CB31YXS
+          </mat-panel-title>
+          <mat-panel-description>
+            On Going
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="content-body">
+          <div class="row row-padding">
+            <div class="col mat-body-1">Channel</div>
+            <div class="col mat-body-2">Facebook</div>
+            <div class="col"></div>
+          </div>
+          <div class="row row-padding">
+            <div class="col mat-body-1">URL / Link</div>
+            <div class="col mat-body-2"><a mat-button routerLink=".">Visit</a></div>
+            <div class="col"></div>
+          </div>
+          <div class="row row-padding">
+            <div class="col mat-body-1">Partner</div>
+            <div class="col mat-body-2">LeBron James</div>
+            <div class="col"></div>
+          </div>
+          <div class="row row-padding">
+            <div class="col mat-body-1">Date</div>
+            <div class="col mat-body-2">Mar. 3, 2019</div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
+
+<button mat-icon-button class="add-circle-btn" (click)="add()">
+  <mat-icon class="add-circle" color="warn">add_circle</mat-icon>
+</button>

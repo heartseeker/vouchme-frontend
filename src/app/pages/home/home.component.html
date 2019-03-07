@@ -1,0 +1,27 @@
+<section class="body-padding col">
+  <form class="search-form col" [formGroup]="searchForm">
+    <div class="logo-container">
+
+      <h1 class="logo-title mat-title">VouchMe</h1>
+      <img alt="VouchMe" class="logo" src="/assets/images/site/logo.png" />
+    </div>
+    <mat-form-field class="search-bar">
+      <input type="text" placeholder="Search" aria-label="Number" matInput formControlName="search" [matAutocomplete]="auto">
+      <mat-icon matSuffix>search</mat-icon>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option (click)="navigate(option)" *ngFor="let option of filteredOptions | async" [value]="option">
+          <mat-icon style="color: #c1c1c1">search</mat-icon> {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div class="search-controls">
+      <button mat-raised-button (click)="search()" class="btn search-btn" color="primary">Search</button>
+      <button mat-raised-button (click)="navigate('registration')" class="btn register-btn" >Register</button>
+
+    </div>
+    <div class="notice-register">
+      <span class="mat-caption">Already have an account? <span class="click-text" (click)="navigate('/users/login')">Logon here</span></span>
+    </div>
+  </form>
+</section>
+

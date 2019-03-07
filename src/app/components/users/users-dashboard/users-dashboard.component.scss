@@ -1,0 +1,42 @@
+app-users-dashboard {
+
+    section {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .content-body,
+    .profile-link {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .form {
+        display: flex;
+        flex: 1;
+    }
+
+    .form-field {
+        flex: 1;
+    }
+
+    .mat-title {
+        margin: 0;
+        margin-top: 16px;
+    }
+
+    .row-padding {
+        padding: 8px;
+    }
+
+    .row {
+        align-items: center; 
+    }
+
+    .mat-form-field-wrapper {
+        font-size: 14px;
+    }
+
+}

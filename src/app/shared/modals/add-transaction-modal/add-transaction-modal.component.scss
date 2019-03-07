@@ -1,0 +1,15 @@
+
+app-add-transaction-modal {
+    .mat-form-field {
+        margin-bottom: 1rem;
+    }
+
+    .confirm {
+        margin-bottom: .5rem;
+    }
+
+    .button-controls {
+        display: flex;
+        flex-direction: column;
+    }
+}

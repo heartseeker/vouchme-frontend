@@ -1,0 +1,24 @@
+<section class="user-list col">
+  <div (click)="navigate('One')" class="user-detail row" *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1]">
+    <div class="user body-padding row">
+      <img class="avatar" src="/assets/images/site/default-user.png" alt="User" />
+      <div class="user-info col">
+        <span class="user-name">Alex Amistad</span>
+        <div class="vouch-details row">
+          <div class="col">
+            <span class="mat-caption">Vouches</span>
+            <span class="mat-body-2 vouch-score">871</span>
+          </div>
+          <div class="col">
+            <span class="mat-caption">Infames</span>
+            <span class="mat-body-2 infame-score">76</span>
+          </div>
+          <div class="col">
+            <span class="mat-caption">Transactions</span>
+            <span class="mat-body-2">1,452</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

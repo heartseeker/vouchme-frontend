@@ -1,0 +1,64 @@
+<section>
+  <mat-vertical-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="personalDetailForm">
+      <form [formGroup]="personalDetailForm">
+        <ng-template matStepLabel>Personal details</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="First name" formControlName="firstname" required>
+          <mat-error *ngIf="field('personalDetailForm','firstname').hasError('required')">
+            First name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last name" formControlName="lastname" required>
+          <mat-error *ngIf="field('personalDetailForm','lastname').hasError('required')">
+            Last name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone number" formControlName="phone" required>
+          <mat-error *ngIf="field('personalDetailForm','phone').hasError('required')">
+            Phone number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email Address" formControlName="email" required>
+          <mat-error *ngIf="field('personalDetailForm','email').hasError('required')">
+            Email Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="address" required>
+          <mat-error *ngIf="field('personalDetailForm','address').hasError('required')">
+            Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="credentialsForm">
+      <form [formGroup]="credentialsForm">
+        <ng-template matStepLabel>Credentials</ng-template>
+        <button class="upload-btn" mat-button color="primary" (click)="imgFileInput.click()">Add a photo</button>
+        <input #file hidden type="file" #imgFileInput (change)="preview(file.files)">
+        <span style="color:red;" *ngIf="message">{{message}}</span>
+        
+        <img class="reference-image" [src]="imgURL" height="200" *ngIf="imgURL">
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext color="primary" (click)="confirmAction()">Confirm</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</section>

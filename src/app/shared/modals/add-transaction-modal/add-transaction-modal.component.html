@@ -1,0 +1,39 @@
+<section class="body-padding col">
+  <form [formGroup]="transactionForm" class="col">
+    <mat-form-field>
+      <mat-select formControlName="channel" placeholder="Choose a channel">
+        <mat-option *ngFor="let channel of channels" [value]="channel.value">
+          {{ channel.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="url" placeholder="URL / Link">
+      <mat-error *ngIf="field('url').hasError('required')">
+          URL / Link is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" placeholder="Partner" matInput formControlName="partner" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select formControlName="status" placeholder="Choose a status">
+        <mat-option *ngFor="let stats of status" [value]="stats.value">
+          {{ stats.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <div class="button-controls">
+    <button mat-raised-button color="primary" class="confirm" (click)="confirm()">Confirm</button>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+  </div>
+</section>

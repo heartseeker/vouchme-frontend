@@ -1,0 +1,8 @@
+<div class="snack-bar-container" [ngClass]="getStatusClassName()">
+    <div class="snack-bar-icon-wrapper">
+      <mat-icon class="mat-icon">{{ statusIcon }}</mat-icon>
+    </div>
+    <div class="snack-bar-message">
+      <span>{{ data?.message }}</span>
+    </div>
+</div>

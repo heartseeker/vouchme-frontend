@@ -1,0 +1,18 @@
+<section class="users-login">
+  <div class="logo-container">
+    <img class="logo" src="/assets/images/site/logo.png" alt="VouchMe" />
+  </div>
+  <form [formGroup]="loginForm" class="users-login-form">
+    <mat-form-field>
+      <mat-icon matPrefix>person</mat-icon>
+      <input formControlName="username" matInput placeholder="Username">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-icon class="mat-icon" matPrefix>lock</mat-icon>
+      <input formControlName="password" matInput type="password" placeholder="Password">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="login()">Login</button>
+  </form>
+</section>
