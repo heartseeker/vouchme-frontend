@@ -5,6 +5,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersDashboardComponent } from './users-dashboard/users-dashboard.component';
 import { UsersSettingsComponent } from './users-settings/users-settings.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UsersSettingsComponent } from './users-settings/users-settings.componen
     CommonModule,
     UsersRoutingModule,
     SharedModule,
+    CoreModule,
   ]
 })
 export class UsersModule { }

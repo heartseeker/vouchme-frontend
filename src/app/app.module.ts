@@ -10,6 +10,8 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './pages/home/home.module';
 import { UserModule } from './pages/user/user.module';
 import { RegisterModule } from './pages/register/register.module';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from './../environments/environment';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { RegisterModule } from './pages/register/register.module';
     HomeModule,
     UserModule,
     RegisterModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

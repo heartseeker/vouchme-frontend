@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersSettingsPanelComponent } from './components/mobile/users/users-settings-panel/users-settings-panel.component';
 import { ModalsModule } from './modals/modals.module';
 import { SnackbarService } from './services/snackbar.service';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,6 +19,7 @@ import { SnackbarService } from './services/snackbar.service';
     MaterialModule,
     ReactiveFormsModule,
     ModalsModule,
+    HttpClientModule,
   ],
   exports: [
     MaterialModule,
@@ -24,7 +27,8 @@ import { SnackbarService } from './services/snackbar.service';
     UsersSettingsPanelComponent,
   ],
   providers: [
-    SnackbarService
+    SnackbarService,
+    UserService,
   ]
 })
 export class SharedModule { }

@@ -5,14 +5,24 @@
   <form [formGroup]="loginForm" class="users-login-form">
     <mat-form-field>
       <mat-icon matPrefix>person</mat-icon>
-      <input formControlName="username" matInput placeholder="Username">
+      <input formControlName="username" matInput placeholder="Username or Email">
+      <mat-error *ngIf="loginForm.get('username').hasError('required')">
+        Username / Email is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-icon class="mat-icon" matPrefix>lock</mat-icon>
+      <mat-icon class="mat-icon" matPrefix>lock</mat-icon>
       <input formControlName="password" matInput type="password" placeholder="Password">
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button (click)="login()">Login</button>
+    <p class="mat-error server-error" *ngIf="loginForm.hasError('invalid_credentials')">
+      {{ loginForm.errors.invalid_credentials.message }}
+    </p>
+
+    <button class="logon-btn" mat-raised-button (click)="login()">Login</button>
   </form>
 </section>

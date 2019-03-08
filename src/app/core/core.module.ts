@@ -4,6 +4,7 @@ import { PopupModalComponent } from './modal/popup-modal/popup-modal.component';
 import { MaterialModule } from './material.module';
 import { PortalModule } from '@angular/cdk/portal';
 import { ComponentsModule } from '../shared/components/components.module';
+import { ApiService } from './api.service';
 
 
 @NgModule({
@@ -18,6 +19,9 @@ import { ComponentsModule } from '../shared/components/components.module';
   ],
   entryComponents: [
     PopupModalComponent
+  ],
+  providers: [
+    ApiService
   ]
 })
 export class CoreModule { }

@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/core/api.service';
+
 
 @Component({
   selector: 'app-users-login',
@@ -14,7 +16,9 @@ export class UsersLoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private http: ApiService,
+    private ref: ChangeDetectorRef,
   ) { }
 
   ngOnInit() {
@@ -25,6 +29,17 @@ export class UsersLoginComponent implements OnInit {
   }
 
   login() {
-    this.router.navigate(['/users/dashboard']);
+    const username = this.loginForm.get('username').value;
+    const password = this.loginForm.get('password').value;
+
+    this.http.post('auth', { username, password }).subscribe((result) => {
+      this.router.navigate(['/users/dashboard']);
+    }, (err) => {
+      this.loginForm.setErrors({ invalid_credentials: { message: err.error.message }});
+      console.log('this.loginForm >', this.loginForm);
+      console.log('username valid >', this.loginForm.get('username').valid);
+      console.log('has error  >>>', this.loginForm.hasError('invalid_credentials'));
+      console.log('loginForm.errors.invalid_credentials.message  >>>', this.loginForm.errors.invalid_credentials.message);
+    });
   }
 }
